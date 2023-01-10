@@ -22,7 +22,7 @@ internal class Program
             do
             {
                 Console.Clear();
-                Console.Write("Segunda alabra/número...\n> ");
+                Console.Write("Segunda palabra/número...\n> ");
                 word2 = Console.ReadLine().ToLower();
             } while (word2.Length <= 0);
 

@@ -60,6 +60,7 @@ internal class Program
 
         Console.Clear();
         Console.WriteLine($"El error entre \"{word1Initial}\" y \"{word2Initial}\" es de {error}...\n");
+        Console.ForegroundColor = ConsoleColor.Black;
         Console.BackgroundColor = GetBackgroundColor(porcentajeError);
         Console.Write($"(Similitud del {Math.Round(porcentajeError, 2)}%)\n");
         Console.ResetColor();

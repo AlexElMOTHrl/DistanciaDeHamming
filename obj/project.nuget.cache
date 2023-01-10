@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N+dMQhzM/Fhpmdm1yitSfmc/g5TPHnSrMfUUwjgJQE9r+47SwIfsHNdHul+ZnJAtQOUrrITRoNKKbqJGaaihMA==",
+  "dgSpecHash": "WY/iltfpuQXend3RwlKCYH++iHAZCBTOcd/6Y+saGiOGcGJ7YjjzBeDCoOJlnWFxjE6fhGSsaZ5tUY1mE5tVpw==",
   "success": true,
-  "projectFilePath": "/home/administrador/Documents/C#/DistanciaDeHamming/DistanciaDeHamming.csproj",
+  "projectFilePath": "C:\\Users\\segun\\Documents\\Scripts\\c#\\DistanciaDeHamming\\DistanciaDeHamming.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

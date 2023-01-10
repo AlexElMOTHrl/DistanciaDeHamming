@@ -84,7 +84,7 @@ internal class Program
         {
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Las dos palabras tienen que contener el mismo numero de caracteres, si necesitas que sean de distinto tamaño puedes añadir espacios (No contarán como error y puede calcularse mal.)\nPulsa (y) para continuar con las palabras anteriores.");
+            Console.WriteLine("Las dos palabras tienen que contener el mismo número de caracteres, si necesitas que sean de distinto tamaño puedes añadir espacios (Contarán como error y puede calcularse mal.)\nPulsa (Y) para continuar con las palabras anteriores.");
             Console.ResetColor();
             input = Console.ReadKey();
             if (input.Key == ConsoleKey.Y)

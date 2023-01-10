@@ -1,0 +1,15 @@
+/home/administrador/Documents/C#/DistanciaDeHamming/obj/Debug/net6.0/DistanciaDeHamming.csproj.AssemblyReference.cache
+/home/administrador/Documents/C#/DistanciaDeHamming/obj/Debug/net6.0/DistanciaDeHamming.GeneratedMSBuildEditorConfig.editorconfig
+/home/administrador/Documents/C#/DistanciaDeHamming/obj/Debug/net6.0/DistanciaDeHamming.AssemblyInfoInputs.cache
+/home/administrador/Documents/C#/DistanciaDeHamming/obj/Debug/net6.0/DistanciaDeHamming.AssemblyInfo.cs
+/home/administrador/Documents/C#/DistanciaDeHamming/obj/Debug/net6.0/DistanciaDeHamming.csproj.CoreCompileInputs.cache
+/home/administrador/Documents/C#/DistanciaDeHamming/bin/Debug/net6.0/DistanciaDeHamming
+/home/administrador/Documents/C#/DistanciaDeHamming/bin/Debug/net6.0/DistanciaDeHamming.deps.json
+/home/administrador/Documents/C#/DistanciaDeHamming/bin/Debug/net6.0/DistanciaDeHamming.runtimeconfig.json
+/home/administrador/Documents/C#/DistanciaDeHamming/bin/Debug/net6.0/DistanciaDeHamming.dll
+/home/administrador/Documents/C#/DistanciaDeHamming/bin/Debug/net6.0/ref/DistanciaDeHamming.dll
+/home/administrador/Documents/C#/DistanciaDeHamming/bin/Debug/net6.0/DistanciaDeHamming.pdb
+/home/administrador/Documents/C#/DistanciaDeHamming/obj/Debug/net6.0/DistanciaDeHamming.dll
+/home/administrador/Documents/C#/DistanciaDeHamming/obj/Debug/net6.0/ref/DistanciaDeHamming.dll
+/home/administrador/Documents/C#/DistanciaDeHamming/obj/Debug/net6.0/DistanciaDeHamming.pdb
+/home/administrador/Documents/C#/DistanciaDeHamming/obj/Debug/net6.0/DistanciaDeHamming.genruntimeconfig.cache

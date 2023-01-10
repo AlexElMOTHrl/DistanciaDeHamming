@@ -21,38 +21,42 @@ internal class Program
                 Console.Clear();
                 Console.Write("Primera palabra/número...\n> ");
                 word1Initial = Console.ReadLine();
-                if (word1Initial != null)
+                if (string.IsNullOrEmpty(word1Initial))
                 {
-                    word1 = word1Initial.ToLower();
+                    Console.WriteLine("La entrada no puede ser vacía o nula.");
+                    continue;
                 }
-                else
-                {
-                    word1Initial = "None".ToLower();
-                }
-            } while (word1.Length <= 0);
+                word1 = word1Initial.ToLower();
+            } while (string.IsNullOrEmpty(word1));
+
             do
             {
                 Console.Clear();
                 Console.Write("Segunda palabra/número...\n> ");
-                if (word2Initial != null)
+                word2Initial = Console.ReadLine();
+                if (string.IsNullOrEmpty(word2Initial))
                 {
-                    word1 = word2Initial.ToLower();
-                }
-                else
-                {
-                    word2Initial = "None".ToLower();
+                    Console.WriteLine("La entrada no puede ser vacía o nula.");
+                    continue;
                 }
                 word2 = word2Initial.ToLower();
-            } while (word2.Length <= 0);
+            } while (string.IsNullOrEmpty(word2));
 
             isValid = ValidateLength(word1, word2);
         } while (!isValid);
 
+        if (word1.Length < word2.Length)
+        {
+            word1 = word1.PadRight(word2.Length, ' ');
+        }
+        else if (word2.Length < word1.Length)
+        {
+            word2 = word2.PadRight(word1.Length, ' ');
+        }
+
         distance = WordsMaxDistance(word1, word2);
         error = GetError(word1, word2);
         porcentajeError = PercentageError(word1, word2);
-
-        //?Console.WriteLine($"\nDEBUG:\nDistancia = {word1.Length}\nError = {error}\n");
 
         Console.Clear();
         Console.WriteLine($"El error entre \"{word1Initial}\" y \"{word2Initial}\" es de {error}...\n");
@@ -103,7 +107,7 @@ internal class Program
         if (s1.Length != s2.Length)
         {
             Console.Clear();
-            WriteError("Las dos palabras tienen que contener el mismo número de caracteres, si necesitas que sean de distinto tamaño puedes añadir espacios.\n(Contarán para el error)\n\nSi desea continuar con las palabras anteriores pulsa (Y) ¡SE CALCULARA MAL O CRASHEARÁ!.");
+            WriteError("Las dos palabras tienen que contener el mismo número de caracteres, si continua se añadirán de forma automatica espacios a la derecha de la palabra menor.\n(Contarán para el error)\n\nSi desea continuar con las palabras/numeros anteriores pulsa (Y).\nPulse cualquier otra tecla para volver a escribir las palabras/números...");
             input = Console.ReadKey();
             if (input.Key == ConsoleKey.Y)
             {

@@ -48,9 +48,9 @@ internal class Program
             isValid = ValidateLength(word1, word2);
         } while (!isValid);
 
-        distance = HammingDistance(word1, word2);
+        distance = WordsMaxDistance(word1, word2);
         error = GetError(word1, word2);
-        porcentajeError = PorcentajeError(word1, word2);
+        porcentajeError = PercentageError(word1, word2);
 
         //?Console.WriteLine($"\nDEBUG:\nDistancia = {word1.Length}\nError = {error}\n");
 
@@ -64,7 +64,7 @@ internal class Program
         Console.CursorVisible = true;
     }
 
-    static public int HammingDistance(string s1, string s2)
+    static public int WordsMaxDistance(string s1, string s2)
     {
         int _temp = Math.Max(s1.Length, s2.Length);
         return _temp;
@@ -83,14 +83,13 @@ internal class Program
         return _error;
     }
 
-    static public float PorcentajeError(string s1, string s2)
+    static public float PercentageError(string s1, string s2)
     {
-
         int _error = 0;
         int _distance = 0;
 
         _error = GetError(s1, s2);
-        _distance = HammingDistance(s1, s2);
+        _distance = WordsMaxDistance(s1, s2);
 
         float _temp = (1 - (float)_error / (float)_distance) * 100;
         _temp = (float)Math.Round(_temp, 2);

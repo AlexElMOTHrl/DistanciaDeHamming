@@ -142,6 +142,10 @@ internal class Program
         {
             return ConsoleColor.Yellow;
         }
+        else if (similarity >= 25)
+        {
+            return ConsoleColor.DarkYellow;
+        }
         else
         {
             return ConsoleColor.Red;

@@ -1,8 +1,8 @@
 ﻿//Calcular distancia de Hamming
 internal class Program
 {
-    static public string word1 = "";
-    static public string word2 = "";
+    static public string? word1;
+    static public string? word2;
     static public string? word1Initial = "";
     static public string? word2Initial = "";
     static public int error = 0;
@@ -10,63 +10,85 @@ internal class Program
     static private float porcentajeError = 0;
     private static void Main(string[] args)
     {
-        Console.Clear();
-        Console.WriteLine("Calcular distancia de Hamming.");
-
-        bool isValid = false;
-        do
+        while (true)
         {
-            do
+            word1 = "";
+            word2 = "";
+
+            Console.Clear();
+            Console.CursorVisible = false;
+            Console.WriteLine("Calcular distancia de Hamming.\n");
+
+            Console.WriteLine("¿Desea generar un valor de 2048 bits en binario aleatorio o introducir los valores manualmente?\n (Y) Auto...\n (N) Manual...");
+            ConsoleKeyInfo input;
+            input = Console.ReadKey();
+
+            if (input.Key == ConsoleKey.Y)
             {
-                Console.Clear();
-                Console.Write("Primera palabra/número...\n> ");
-                word1Initial = Console.ReadLine();
-                if (string.IsNullOrEmpty(word1Initial))
-                {
-                    Console.WriteLine("La entrada no puede estar vacía o nula.");
-                    continue;
-                }
-                word1 = word1Initial.ToLower();
-            } while (string.IsNullOrEmpty(word1));
-
-            do
+                word1 = Get2048Binary();
+                word2 = Get2048Binary();
+                word1Initial = word1;
+                word2Initial = word2;
+            }
+            else
             {
-                Console.Clear();
-                Console.Write("Segunda palabra/número...\n> ");
-                word2Initial = Console.ReadLine();
-                if (string.IsNullOrEmpty(word2Initial))
+                bool isValid = false;
+                do
                 {
-                    Console.WriteLine("La entrada no puede estar vacía o nula.");
-                    continue;
+                    do
+                    {
+                        Console.Clear();
+                        Console.CursorVisible = true;
+                        Console.Write("Primera palabra/número...\n> ");
+                        word1Initial = Console.ReadLine();
+                        if (string.IsNullOrEmpty(word1Initial))
+                        {
+                            Console.WriteLine("La entrada no puede estar vacía o nula.");
+                            continue;
+                        }
+                        word1 = word1Initial.ToLower();
+                    } while (string.IsNullOrEmpty(word1));
+
+                    do
+                    {
+                        Console.Clear();
+                        Console.Write("Segunda palabra/número...\n> ");
+                        word2Initial = Console.ReadLine();
+                        if (string.IsNullOrEmpty(word2Initial))
+                        {
+                            Console.WriteLine("La entrada no puede estar vacía o nula.");
+                            continue;
+                        }
+                        word2 = word2Initial.ToLower();
+                    } while (string.IsNullOrEmpty(word2));
+
+                    isValid = ValidateLength(word1, word2);
+                } while (!isValid);
+
+                if (word1.Length < word2.Length)
+                {
+                    word1 = word1.PadRight(word2.Length, ' ');
                 }
-                word2 = word2Initial.ToLower();
-            } while (string.IsNullOrEmpty(word2));
+                else if (word2.Length < word1.Length)
+                {
+                    word2 = word2.PadRight(word1.Length, ' ');
+                }
+            }
+            distance = WordsMaxDistance(word1, word2);
+            error = GetError(word1, word2);
+            porcentajeError = PercentageError(word1, word2);
 
-            isValid = ValidateLength(word1, word2);
-        } while (!isValid);
-
-        if (word1.Length < word2.Length)
-        {
-            word1 = word1.PadRight(word2.Length, ' ');
+            Console.Clear();
+            Console.WriteLine($"El error entre \"{word1Initial}\" y \"{word2Initial}\" es de {error}...\n");
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = GetBackgroundColor(porcentajeError);
+            Console.Write($"(Similitud del {Math.Round(porcentajeError, 2)}%)");
+            Console.ResetColor();
+            Console.WriteLine("\n");
+            Console.CursorVisible = false;
+            Console.ReadKey();
+            Console.CursorVisible = true;
         }
-        else if (word2.Length < word1.Length)
-        {
-            word2 = word2.PadRight(word1.Length, ' ');
-        }
-
-        distance = WordsMaxDistance(word1, word2);
-        error = GetError(word1, word2);
-        porcentajeError = PercentageError(word1, word2);
-
-        Console.Clear();
-        Console.WriteLine($"El error entre \"{word1Initial}\" y \"{word2Initial}\" es de {error}...\n");
-        Console.ForegroundColor = ConsoleColor.Black;
-        Console.BackgroundColor = GetBackgroundColor(porcentajeError);
-        Console.Write($"(Similitud del {Math.Round(porcentajeError, 2)}%)\n");
-        Console.ResetColor();
-        Console.CursorVisible = false;
-        Console.ReadKey();
-        Console.CursorVisible = true;
     }
 
     static public int WordsMaxDistance(string s1, string s2)
@@ -150,5 +172,17 @@ internal class Program
         {
             return ConsoleColor.Red;
         }
+    }
+
+    static string Get2048Binary()
+    {
+        string _temp = "";
+        Random rnd = new Random();
+        for (int i = 0; i < 2048; i++)
+        {
+            _temp += Convert.ToString(rnd.Next(0, 2));
+        }
+
+        return _temp;
     }
 }

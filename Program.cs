@@ -23,7 +23,7 @@ internal class Program
                 word1Initial = Console.ReadLine();
                 if (string.IsNullOrEmpty(word1Initial))
                 {
-                    Console.WriteLine("La entrada no puede ser vacía o nula.");
+                    Console.WriteLine("La entrada no puede estar vacía o nula.");
                     continue;
                 }
                 word1 = word1Initial.ToLower();
@@ -36,7 +36,7 @@ internal class Program
                 word2Initial = Console.ReadLine();
                 if (string.IsNullOrEmpty(word2Initial))
                 {
-                    Console.WriteLine("La entrada no puede ser vacía o nula.");
+                    Console.WriteLine("La entrada no puede estar vacía o nula.");
                     continue;
                 }
                 word2 = word2Initial.ToLower();

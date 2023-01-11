@@ -65,6 +65,7 @@ internal class Program
                     isValid = ValidateLength(word1, word2);
                 } while (!isValid);
 
+                #region Adjust Sizes
                 if (word1.Length < word2.Length)
                 {
                     word1 = word1.PadRight(word2.Length, ' ');
@@ -73,11 +74,14 @@ internal class Program
                 {
                     word2 = word2.PadRight(word1.Length, ' ');
                 }
+                #endregion Adjust Sizes                
             }
+
             distance = WordsMaxDistance(word1, word2);
             error = GetError(word1, word2);
             porcentajeError = PercentageError(word1, word2);
 
+            #region OutPut
             Console.Clear();
             Console.WriteLine($"El error entre \"{word1Initial}\" y \"{word2Initial}\" es de {error}...\n");
             Console.ForegroundColor = ConsoleColor.Black;
@@ -88,6 +92,7 @@ internal class Program
             Console.CursorVisible = false;
             Console.ReadKey();
             Console.CursorVisible = true;
+            #endregion OutPut
         }
     }
 

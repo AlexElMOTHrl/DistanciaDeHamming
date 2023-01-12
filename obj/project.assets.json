@@ -8,24 +8,26 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/administrador/.nuget/packages/": {}
+    "C:\\Users\\segun\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/administrador/Documents/C#/DistanciaDeHamming/DistanciaDeHamming.csproj",
+      "projectUniqueName": "C:\\Users\\segun\\Documents\\Scripts\\c#\\DistanciaDeHamming\\DistanciaDeHamming.csproj",
       "projectName": "DistanciaDeHamming",
-      "projectPath": "/home/administrador/Documents/C#/DistanciaDeHamming/DistanciaDeHamming.csproj",
-      "packagesPath": "/home/administrador/.nuget/packages/",
-      "outputPath": "/home/administrador/Documents/C#/DistanciaDeHamming/obj/",
+      "projectPath": "C:\\Users\\segun\\Documents\\Scripts\\c#\\DistanciaDeHamming\\DistanciaDeHamming.csproj",
+      "packagesPath": "C:\\Users\\segun\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\segun\\Documents\\Scripts\\c#\\DistanciaDeHamming\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/administrador/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\segun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -49,7 +51,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -58,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/6.0.113/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

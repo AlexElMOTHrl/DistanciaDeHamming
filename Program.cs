@@ -169,17 +169,14 @@ internal class Program
         {
             return ConsoleColor.Yellow;
         }
-        else if (similarity >= 25)
-        {
-            return ConsoleColor.DarkYellow;
-        }
         else
         {
             return ConsoleColor.Red;
         }
+
     }
 
-    static string Get2048Binary()
+    /* static string Get2048Binary()
     {
         string _temp = "";
         Random rnd = new Random();
@@ -189,5 +186,16 @@ internal class Program
         }
 
         return _temp;
-    }
+    } */
+
+        static string Get2048Binary() // https://www.delftstack.com/es/howto/csharp/convert-int-to-binary-in-csharp/
+        {
+            Random rnd = new Random();
+            int value = rnd.Next(0,2048);
+            string binary = Convert.ToString(value, 2);
+            binary = binary.PadLeft(14,'0');
+
+            return binary;
+            //Console.WriteLine("Binary:  {0}", binary);
+        }
 }

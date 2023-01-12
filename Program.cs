@@ -19,7 +19,7 @@ internal class Program
             Console.CursorVisible = false;
             Console.WriteLine("Calcular distancia de Hamming.\n");
 
-            Console.WriteLine("¿Desea generar un valor de 2048 bits en binario aleatorio o introducir los valores manualmente?\n (Y) Auto...\n (N) Manual...");
+            Console.WriteLine("¿Desea generar un valor de 14 bits en binario aleatorio o introducir los valores manualmente?\n (Y) Auto...\n (N) Manual...");
             ConsoleKeyInfo input;
             input = Console.ReadKey();
 

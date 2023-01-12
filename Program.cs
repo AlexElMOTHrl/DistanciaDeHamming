@@ -161,7 +161,7 @@ internal class Program
 
     static ConsoleColor GetBackgroundColor(float similarity)
     {
-        if (similarity >= 75)
+        if (similarity >= 85)
         {
             return ConsoleColor.Green;
         }
@@ -188,14 +188,13 @@ internal class Program
         return _temp;
     } */
 
-        static string Get2048Binary() // https://www.delftstack.com/es/howto/csharp/convert-int-to-binary-in-csharp/
-        {
-            Random rnd = new Random();
-            int value = rnd.Next(0,2048);
-            string binary = Convert.ToString(value, 2);
-            binary = binary.PadLeft(14,'0');
+    static string Get2048Binary()
+    {
+        Random rnd = new Random();
+        int value = rnd.Next(0, 2048);
+        string binary = Convert.ToString(value, 2);
+        binary = binary.PadLeft(14, '0');
 
-            return binary;
-            //Console.WriteLine("Binary:  {0}", binary);
-        }
+        return binary;
+    }
 }

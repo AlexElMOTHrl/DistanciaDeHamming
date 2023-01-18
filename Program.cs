@@ -25,8 +25,8 @@ internal class Program
 
             if (input.Key == ConsoleKey.Y)
             {
-                word1 = Get2048Binary();
-                word2 = Get2048Binary();
+                word1 = word2 = Get2048Binary();
+
                 word1Initial = word1;
                 word2Initial = word2;
             }

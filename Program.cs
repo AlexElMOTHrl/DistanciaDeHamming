@@ -3,8 +3,8 @@ internal class Program
 {
     static public string? word1;
     static public string? word2;
-    static public string? word1Initial = "";
-    static public string? word2Initial = "";
+    static public string? word1Initial = string.Empty;
+    static public string? word2Initial = string.Empty;
     static public int error = 0;
     static public int distance = 0;
     static private float porcentajeError = 0;
